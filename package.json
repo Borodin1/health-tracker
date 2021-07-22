@@ -1,6 +1,6 @@
 {
     "name": "health-tracker",
-    "version": "2.0.5",
+    "version": "2.0.6",
     "private": true,
     "author": {
         "email": "admin@lectrum.io",
@@ -42,6 +42,7 @@
         "yup": "0.32.9"
     },
     "devDependencies": {
+        "@sotream/eslint-config-react-ts": "^0.1.1",
         "@testing-library/jest-dom": "5.14.1",
         "@testing-library/react": "12.0.0",
         "@testing-library/react-hooks": "7.0.0",
@@ -56,16 +57,8 @@
         "@types/react-dom": "17.0.8",
         "@types/styled-components": "5.1.10",
         "@types/uuid": "8.3.0",
-        "@typescript-eslint/eslint-plugin": "4.28.0",
-        "@typescript-eslint/parser": "4.28.0",
         "eslint": "7.29.0",
-        "eslint-config-airbnb-typescript": "12.3.1",
         "eslint-config-prettier": "8.3.0",
-        "eslint-plugin-import": "2.23.4",
-        "eslint-plugin-no-use-extend-native": "0.5.0",
-        "eslint-plugin-node": "11.1.0",
-        "eslint-plugin-promise": "5.1.0",
-        "eslint-plugin-react": "7.24.0",
         "nock": "13.1.0",
         "prettier-eslint": "12.0.0",
         "prettier-eslint-cli": "5.0.1",
