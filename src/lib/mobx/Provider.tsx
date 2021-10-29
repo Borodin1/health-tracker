@@ -2,7 +2,7 @@
 import { FC, createContext, ReactElement } from 'react';
 
 // Store
-import { RootStore } from './mobx';
+import { RootStore } from './stores';
 
 const store = new RootStore();
 

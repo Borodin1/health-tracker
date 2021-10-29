@@ -2,12 +2,12 @@
 import { makeAutoObservable } from 'mobx';
 
 // API
-import { api } from '../../api';
+import { api } from '../../../api';
 
 // Types
 import { RootStore } from '.';
 
-export class UserStore {
+export class TrackerStore {
     root: RootStore;
 
     constructor(root: RootStore) {

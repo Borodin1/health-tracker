@@ -1,5 +1,35 @@
 {
     "extends": [
         "@sotream/eslint-config-react-ts"
-    ]
+    ],
+    "rules": {
+        "no-void": "off",
+        "indent": [
+            "error",
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "max-len": [
+            "warn",
+            120,
+            {
+                "ignoreUrls": true
+            }
+        ],
+        "@typescript-eslint/type-annotation-spacing": [
+            "warn",
+            {
+                "after": true,
+                "before": false,
+                "overrides": {
+                    "arrow": {
+                        "before": true,
+                        "after": true
+                    }
+                }
+            }
+        ]
+    }
 }
