@@ -1,5 +1,10 @@
 // Components
-import { Dashboard } from '../pages';
+import {
+    Dashboard, DinnerPage, FruitsPage, JunkPage, LoginPage, LunchPage, SignUpPage, SleepPage, VegetablesPage, WaterPage,
+} from '../pages';
+import { BreakfastPage } from '../pages/breakfastPage';
+import { CoffeePage } from '../pages/coffeePage';
+import { StepsPage } from '../pages/stepsPage';
 
 const base = '/';
 
@@ -10,11 +15,11 @@ export const book = Object.freeze({
     },
     login: {
         url:  `${base}login`,
-        page: () => <h1>Login</h1>,
+        page: LoginPage,
     },
     registration: {
         url:  `${base}registration`,
-        page: () => <h1>Registration</h1>,
+        page: SignUpPage,
     },
     profile: {
         url:  `${base}profile`,
@@ -22,43 +27,43 @@ export const book = Object.freeze({
     },
     breakfast: {
         url:  `${base}breakfast`,
-        page: () => <h1>Breakfast</h1>,
+        page: BreakfastPage,
     },
     coffee: {
         url:  `${base}coffee`,
-        page: () => <h1>Coffee</h1>,
+        page: CoffeePage,
     },
     dinner: {
         url:  `${base}dinner`,
-        page: () => <h1>Dinner</h1>,
+        page: DinnerPage,
     },
     fruits: {
         url:  `${base}fruits`,
-        page: () => <h1>Fruits</h1>,
+        page: FruitsPage,
     },
     junk: {
         url:  `${base}junk`,
-        page: () => <h1>Junk</h1>,
+        page: JunkPage,
     },
     lunch: {
         url:  `${base}lunch`,
-        page: () => <h1>Lunch</h1>,
+        page: LunchPage,
     },
     sleep: {
         url:  `${base}sleep`,
-        page: () => <h1>Sleep</h1>,
+        page: SleepPage,
     },
     steps: {
         url:  `${base}steps`,
-        page: () => <h1>Steps</h1>,
+        page: StepsPage,
     },
     vegetables: {
         url:  `${base}vegetables`,
-        page: () => <h1>Vegetables</h1>,
+        page: VegetablesPage,
     },
     water: {
         url:  `${base}water`,
-        page: () => <h1>Water</h1>,
+        page: WaterPage,
     },
 });
 

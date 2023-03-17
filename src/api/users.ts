@@ -1,5 +1,6 @@
-// Core
 import axios, { AxiosResponse } from 'axios';
+import { ILoginFormShape } from '../bus/tracker/components/forms/types';
+// Core
 
 // Config
 import { root } from './config';
@@ -39,10 +40,11 @@ export const users = {
 
         return data;
     },
-    login: async (credentials: string): Promise<string> => {
+    login: async (credentials: ILoginFormShape): Promise<string> => {
+        const { email, password } = credentials;
         const { data } = await axios.get<AxiosResponse<string>>(`${root}/login`, {
             headers: {
-                authorization: `Basic ${credentials}`,
+                authorization: `Basic ${window.btoa(`${email}:${password}`)}`,
             },
         });
 

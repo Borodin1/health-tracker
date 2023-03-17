@@ -1,12 +1,12 @@
 // Core
-import { FC, ReactElement } from 'react';
+import { FC, ReactElement, useEffect } from 'react';
 import cx from 'classnames';
 import {
-    Link, matchPath, useLocation,
+    Link, matchPath, useLocation, useNavigate,
 } from 'react-router-dom';
-import { observer } from 'mobx-react-lite';
 
 // Book
+import { useDispatch, useSelector } from 'react-redux';
 import { book } from '../../navigation/book';
 
 // Styles
@@ -17,14 +17,20 @@ import { Spinner } from '../../elements/spinner';
 
 // Hooks
 import { useStore } from '../../hooks';
+import { setScoreAsync } from '../../lib/redux/actions/score';
+import { getScore } from '../../lib/redux/selectors/auth';
+import { profileActions, setProfileAsync } from '../../lib/redux/actions/profile';
+import { getProfile } from '../../lib/redux/selectors/profile';
 
-
-export const Base: FC<IPropTypes> = observer((props) => {
+export const Base: FC<IPropTypes> = (props) => {
+    const dispatch = useDispatch();
+    const scoreValue = useSelector(getScore);
+    const profileInfo = useSelector(getProfile);
     const { pathname } = useLocation();
     const { uiStore } = useStore();
 
     const { isLoading } = uiStore;
-
+    console.log(profileInfo, scoreValue);
     const {
         children,
         center,
@@ -34,7 +40,7 @@ export const Base: FC<IPropTypes> = observer((props) => {
     const isExact = matchPath(book.root.url, pathname);
 
     // TODO; необходимо заменить на получаемые с сервера данные
-    const score = 50;
+    const score = scoreValue;
 
     // TODO; необходимо динамически менять значения в зависимости от выбранного при регистрации пола
     const avatarCX = cx([
@@ -51,6 +57,7 @@ export const Base: FC<IPropTypes> = observer((props) => {
     const loaderCX = isLoading && (
         <Spinner isLoading = { isLoading } />
     );
+
 
     const widgetJSX = score !== null && !disabledWidget && (
         <div className = { Styles.widget }>
@@ -73,6 +80,10 @@ export const Base: FC<IPropTypes> = observer((props) => {
         <Link to = { book.root.url } className = { Styles.homeLink }>На главную</Link>
     );
 
+
+    const click = () => dispatch(setScoreAsync());
+
+
     return (
         <section className = { Styles.profile }>
             <div className = { avatarCX }>
@@ -83,7 +94,9 @@ export const Base: FC<IPropTypes> = observer((props) => {
                     <div>
                         { homeLinkJSX }
                     </div>
-                    <h1>Profile component</h1>
+                    <button onClick = { click }>
+                        click
+                    </button>
                 </div>
                 <div className = { contentCX }>
                     { children }
@@ -92,7 +105,7 @@ export const Base: FC<IPropTypes> = observer((props) => {
             </div>
         </section>
     );
-});
+};
 
 interface IPropTypes {
     children: ReactElement | ReactElement[];

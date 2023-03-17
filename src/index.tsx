@@ -5,7 +5,8 @@ import { configure } from 'mobx';
 import { Provider } from 'react-redux';
 
 // Components
-import { Provider as MobXProvider } from './lib/mobx/Provider';
+import { QueryClientProvider } from 'react-query';
+
 
 // Instruments
 import { RoutesComponent } from './navigation';
@@ -14,6 +15,7 @@ import { store } from './lib/redux/init/store';
 // Styles
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import './theme/index.scss';
+import { queryClient } from './lib/react-query';
 
 configure({
     enforceActions:             'always',
@@ -24,11 +26,11 @@ configure({
 
 render(
     <Provider store = { store }>
-        <MobXProvider>
+        <QueryClientProvider client = { queryClient }>
             <Router>
                 <RoutesComponent />
             </Router>
-        </MobXProvider>
+        </QueryClientProvider>
     </Provider>,
     document.getElementById('root'),
 );
