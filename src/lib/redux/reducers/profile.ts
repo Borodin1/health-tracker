@@ -1,7 +1,13 @@
 import { AnyAction } from 'redux';
+import { IProfile } from '../../../types/index';
 import { profileTypes } from '../types/profile';
 
-const initialState = {
+export interface IProfileState{
+    user: IProfile[] | null,
+    isLoading: boolean
+}
+
+const initialState: IProfileState = {
     user:      null,
     isLoading: false,
 };
@@ -19,6 +25,13 @@ export const profileReducers = (state = initialState, action: AnyAction) => {
             return {
                 ...state,
                 isLoading: action.payload,
+            };
+        }
+
+        case profileTypes.UPDATE_PROFILE: {
+            return {
+                ...state,
+                user: action.payload,
             };
         }
 

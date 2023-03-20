@@ -1,11 +1,21 @@
+// Core
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
+import cx from 'classnames';
+
+// Components
 import { Input } from '../../../../elements/customInput';
 import { schema } from './config';
+
+// styles
 import styles from './styles/index.module.scss';
 import profile from '../profile/styles/index.module.scss';
+
+// hooks
 import { useSignUp } from '../../../../hooks/useSignUp';
+
+// types
 import { IProfile } from '../../../../types';
 
 export const SignUp = () => {
@@ -32,6 +42,13 @@ export const SignUp = () => {
         form.reset();
     });
 
+    const classNamesF = cx(profile.female, {
+        [ profile.selected ]: gender === 'f',
+    });
+
+    const classNamesM = cx(profile.male, {
+        [ profile.selected ]: gender === 'm',
+    });
 
     return (
         <section className = { styles.registration }>
@@ -43,12 +60,12 @@ export const SignUp = () => {
                     <div className = { profile.gender }>
                         <div
                             onClick = { () => setGender('f') }
-                            className = { profile.female }>
+                            className = { classNamesF }>
                             <span >Женщина</span>
                         </div>
                         <div
                             onClick = { () => setGender('m') }
-                            className = { profile.male }>
+                            className = { classNamesM }>
                             <span >Мужчина</span>
                         </div>
                     </div>

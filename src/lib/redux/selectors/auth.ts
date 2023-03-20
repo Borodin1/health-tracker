@@ -11,3 +11,7 @@ export const getScore = (state: RootState) => {
 export const getScoreisLoading = (state: RootState) => {
     return state.score.isLoading;
 };
+
+export const getRecordedScore = (state: RootState) => {
+    return state.score.recordedScore;
+};

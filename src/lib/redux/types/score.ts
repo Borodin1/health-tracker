@@ -1,4 +1,10 @@
 export const scoreTypes = Object.freeze({
     SET_SCORE:           'SET_SCORE',
     SET_SCORE_ISLOADING: 'SET_SCORE_ISLOADING',
+
+    SET_RECORD_SCORE: 'SET_RECORD_SCORE',
+
+    GET_RECORD_SCORE: 'GET_RECORD_SCORE',
+
+    SET_UPDATE_SCORE: 'SET_UPDATE_SCORE',
 });

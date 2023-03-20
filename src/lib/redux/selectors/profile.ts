@@ -1,6 +1,6 @@
 import { RootState } from '../init/store';
 
-export const getProfile = (state: RootState): string => {
+export const getProfile = (state: RootState) => {
     return state.profile.user;
 };
 

@@ -1,6 +1,7 @@
 // Components
 import {
-    Dashboard, DinnerPage, FruitsPage, JunkPage, LoginPage, LunchPage, SignUpPage, SleepPage, VegetablesPage, WaterPage,
+    Dashboard, DinnerPage, FruitsPage, JunkPage, LoginPage, LunchPage, ProfilePage, SignUpPage,
+    SleepPage, VegetablesPage, WaterPage,
 } from '../pages';
 import { BreakfastPage } from '../pages/breakfastPage';
 import { CoffeePage } from '../pages/coffeePage';
@@ -23,7 +24,7 @@ export const book = Object.freeze({
     },
     profile: {
         url:  `${base}profile`,
-        page: () => <h1>Profile</h1>,
+        page: ProfilePage,
     },
     breakfast: {
         url:  `${base}breakfast`,

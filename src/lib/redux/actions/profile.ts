@@ -1,13 +1,13 @@
-import { useSelector } from 'react-redux';
 import { Dispatch } from 'redux';
+import { IProfile, IProfileRequest } from '../../../types/index';
+
 import { authActions } from './auth';
-import { getToken } from '../selectors/auth';
 import { api } from '../../../api/index';
 import { profileTypes } from '../types/profile';
-import { IProfile } from '../../../types/index';
+
 
 export const profileActions = Object.freeze({
-    setProfile: (user: IProfile | null) => {
+    setProfile: (user: IProfileRequest[] | null) => {
         return {
             type:    profileTypes.SET_PROFILE,
             payload: user,
@@ -20,13 +20,20 @@ export const profileActions = Object.freeze({
             payload: value,
         };
     },
+    updateProfile: (user: IProfile) => {
+        return {
+            type:    profileTypes.UPDATE_PROFILE,
+            payload: user,
+        };
+    },
 });
 
 
 export const setProfileAsync = () => async (dispatch: Dispatch) => {
     try {
         dispatch(profileActions.setIsLoading(true));
-        const token = useSelector(getToken);
+
+        const token = localStorage.getItem('token');
 
         const user = await api.users.getMe(token);
 

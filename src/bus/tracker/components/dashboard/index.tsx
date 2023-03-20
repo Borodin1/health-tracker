@@ -1,4 +1,7 @@
+// Core
 import { Link } from 'react-router-dom';
+
+// styles
 import styles from './styles/index.module.scss';
 
 export const DashboardQuestions: React.FC = () => {

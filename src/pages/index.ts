@@ -9,3 +9,4 @@ export * from './vegetablesPage';
 export * from './junkPage';
 export * from './waterPage';
 export * from './sleepPage';
+export * from './profilePage';

@@ -6,6 +6,9 @@ export enum Sex {
 
 export type ValueType = number | string | boolean;
 
+export interface IProfileRequest{
+    data: IProfile[]
+}
 export interface IProfile {
     fname: string;
     lname: string;
@@ -15,6 +18,7 @@ export interface IProfile {
     sex: string,
     height: number;
     weight: number;
+    created?: string
 }
 
 export interface IRecord {
@@ -25,4 +29,9 @@ export interface IRecord {
 export interface IResponseRecord {
     hash: string;
     value: ValueType;
+}
+
+export interface ILoginFormShape{
+    email: string
+    password: string
 }

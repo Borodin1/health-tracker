@@ -1,6 +1,10 @@
+
 import { CustomQuestionInput } from '../../../../elements/customQuestionInput';
+import { useGetRecord } from '../../../../hooks/useGetRecord';
 
 export const Sleep = () => {
+    useGetRecord('sleep');
+
     return (
         <>
             <CustomQuestionInput

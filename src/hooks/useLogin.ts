@@ -4,8 +4,8 @@ import { useDispatch } from 'react-redux';
 import { AxiosError } from 'axios';
 import { useEffect } from 'react';
 import { api } from '../api/index';
-import { ILoginFormShape } from '../bus/tracker/components/forms/types';
 import { authActions } from '../lib/redux/actions/auth';
+import { ILoginFormShape } from '../types';
 
 export const useLogin = () => {
     const dispatch = useDispatch();
@@ -28,8 +28,6 @@ export const useLogin = () => {
             }
         },
     });
-
-    console.log(mutation.isSuccess);
 
     useEffect(() => {
         if (mutation.isSuccess) {

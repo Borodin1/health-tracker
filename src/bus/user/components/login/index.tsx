@@ -1,11 +1,19 @@
+// Core
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { yupResolver } from '@hookform/resolvers/yup';
+// styles
 import styles from './styles/index.module.scss';
 import { schema } from './config';
+
+// Components
 import { Input } from '../../../../elements/customInput';
-import { ILoginFormShape } from '../../../tracker/components/forms/types';
+
+// Hooks
 import { useLogin } from '../../../../hooks/useLogin';
+
+// types
+import { ILoginFormShape } from '../../../../types';
 
 export const LoginForm: React.FC = () => {
     const login = useLogin();

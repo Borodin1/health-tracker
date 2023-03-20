@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
-import { ILoginFormShape } from '../bus/tracker/components/forms/types';
+import { ILoginFormShape, IProfileRequest } from '../types/index';
 // Core
 
 // Config
@@ -9,18 +9,18 @@ import { root } from './config';
 import { IProfile } from '../types';
 
 export const users = {
-    getMe: async (token: string | null): Promise<IProfile> => {
+    getMe: async (token: string | null): Promise<IProfileRequest[]> => {
         if (!token) {
             throw new Error('токен не указан');
         }
 
-        const { data } = await axios.get<IProfile>(`${root}/profile`, {
+        const data   = await axios.get<IProfileRequest[]>(`${root}/profile`, {
             headers: {
                 authorization: `Bearer ${token}`,
             },
         });
 
-        return data;
+        return data?.data;
     },
     create: async (payload: IProfile): Promise<string> => {
         const { data } = await axios.post<AxiosResponse<string>>(`${root}/users`, payload);

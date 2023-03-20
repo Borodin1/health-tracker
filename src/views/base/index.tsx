@@ -18,19 +18,21 @@ import { Spinner } from '../../elements/spinner';
 // Hooks
 import { useStore } from '../../hooks';
 import { setScoreAsync } from '../../lib/redux/actions/score';
-import { getScore } from '../../lib/redux/selectors/auth';
-import { profileActions, setProfileAsync } from '../../lib/redux/actions/profile';
+import { getScore, getToken } from '../../lib/redux/selectors/auth';
+import {  setProfileAsync } from '../../lib/redux/actions/profile';
 import { getProfile } from '../../lib/redux/selectors/profile';
+import { UserProfile } from '../../elements/user';
 
 export const Base: FC<IPropTypes> = (props) => {
+    const navigate = useNavigate();
     const dispatch = useDispatch();
+    const token = useSelector(getToken);
     const scoreValue = useSelector(getScore);
     const profileInfo = useSelector(getProfile);
     const { pathname } = useLocation();
     const { uiStore } = useStore();
 
     const { isLoading } = uiStore;
-    console.log(profileInfo, scoreValue);
     const {
         children,
         center,
@@ -38,17 +40,17 @@ export const Base: FC<IPropTypes> = (props) => {
     } = props;
 
     const isExact = matchPath(book.root.url, pathname);
-
     // TODO; необходимо заменить на получаемые с сервера данные
     const score = scoreValue;
 
     // TODO; необходимо динамически менять значения в зависимости от выбранного при регистрации пола
     const avatarCX = cx([
         Styles.sidebar, {
-            [ Styles.male ]:   true,
-            [ Styles.female ]: false,
+            [ Styles.male ]:   profileInfo?.sex === 'm',
+            [ Styles.female ]: profileInfo?.sex === 'f',
         },
     ]);
+
 
     const contentCX = cx(Styles.content, {
         [ Styles.center ]: center,
@@ -81,7 +83,13 @@ export const Base: FC<IPropTypes> = (props) => {
     );
 
 
-    const click = () => dispatch(setScoreAsync());
+    useEffect(() => {
+        if (!token) {
+            navigate('/login');
+        }
+        dispatch(setScoreAsync());
+        dispatch(setProfileAsync());
+    }, [scoreValue]);
 
 
     return (
@@ -94,9 +102,7 @@ export const Base: FC<IPropTypes> = (props) => {
                     <div>
                         { homeLinkJSX }
                     </div>
-                    <button onClick = { click }>
-                        click
-                    </button>
+                    <UserProfile />
                 </div>
                 <div className = { contentCX }>
                     { children }
