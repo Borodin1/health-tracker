@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/Borodin1/health-tracker/static/css/main.25ba4e56.chunk.css",
-    "main.js": "/Borodin1/health-tracker/static/js/main.ece72066.chunk.js",
-    "main.js.map": "/Borodin1/health-tracker/static/js/main.ece72066.chunk.js.map",
-    "runtime-main.js": "/Borodin1/health-tracker/static/js/runtime-main.e8e6997e.js",
-    "runtime-main.js.map": "/Borodin1/health-tracker/static/js/runtime-main.e8e6997e.js.map",
-    "static/css/2.fe79023c.chunk.css": "/Borodin1/health-tracker/static/css/2.fe79023c.chunk.css",
-    "static/js/2.fd6ecc84.chunk.js": "/Borodin1/health-tracker/static/js/2.fd6ecc84.chunk.js",
-    "static/js/2.fd6ecc84.chunk.js.map": "/Borodin1/health-tracker/static/js/2.fd6ecc84.chunk.js.map",
-    "index.html": "/Borodin1/health-tracker/index.html",
-    "static/css/2.fe79023c.chunk.css.map": "/Borodin1/health-tracker/static/css/2.fe79023c.chunk.css.map",
-    "static/css/main.25ba4e56.chunk.css.map": "/Borodin1/health-tracker/static/css/main.25ba4e56.chunk.css.map",
-    "static/js/2.fd6ecc84.chunk.js.LICENSE.txt": "/Borodin1/health-tracker/static/js/2.fd6ecc84.chunk.js.LICENSE.txt",
-    "static/media/styles.module.scss": "/Borodin1/health-tracker/static/media/male.629573ff.png",
-    "static/media/index.module.scss": "/Borodin1/health-tracker/static/media/woman.5dc3f31b.png"
+    "main.css": "/health-tracker/static/css/main.161b6ce6.chunk.css",
+    "main.js": "/health-tracker/static/js/main.ece72066.chunk.js",
+    "main.js.map": "/health-tracker/static/js/main.ece72066.chunk.js.map",
+    "runtime-main.js": "/health-tracker/static/js/runtime-main.74606817.js",
+    "runtime-main.js.map": "/health-tracker/static/js/runtime-main.74606817.js.map",
+    "static/css/2.fe79023c.chunk.css": "/health-tracker/static/css/2.fe79023c.chunk.css",
+    "static/js/2.fd6ecc84.chunk.js": "/health-tracker/static/js/2.fd6ecc84.chunk.js",
+    "static/js/2.fd6ecc84.chunk.js.map": "/health-tracker/static/js/2.fd6ecc84.chunk.js.map",
+    "index.html": "/health-tracker/index.html",
+    "static/css/2.fe79023c.chunk.css.map": "/health-tracker/static/css/2.fe79023c.chunk.css.map",
+    "static/css/main.161b6ce6.chunk.css.map": "/health-tracker/static/css/main.161b6ce6.chunk.css.map",
+    "static/js/2.fd6ecc84.chunk.js.LICENSE.txt": "/health-tracker/static/js/2.fd6ecc84.chunk.js.LICENSE.txt",
+    "static/media/styles.module.scss": "/health-tracker/static/media/male.629573ff.png",
+    "static/media/index.module.scss": "/health-tracker/static/media/woman.5dc3f31b.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.e8e6997e.js",
+    "static/js/runtime-main.74606817.js",
     "static/css/2.fe79023c.chunk.css",
     "static/js/2.fd6ecc84.chunk.js",
-    "static/css/main.25ba4e56.chunk.css",
+    "static/css/main.161b6ce6.chunk.css",
     "static/js/main.ece72066.chunk.js"
   ]
 }
