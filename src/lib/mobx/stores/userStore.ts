@@ -1,9 +1,6 @@
 // Core
 import { makeAutoObservable } from 'mobx';
 
-// API
-import { api } from '../../../api';
-
 // Types
 import { RootStore } from '.';
 
